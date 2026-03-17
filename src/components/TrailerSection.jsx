@@ -13,14 +13,12 @@ const TrailerSection = () => {
 
     <div className='relative mt-6'>
         <BlurCircle top='-100' right='-100px'/>
-            <ReactPlayer
-            url={currentTrailer.videoUrl}
-            playing
-            controls
-            width="960px"
-            height="540px"
-            className="mx-auto max-w-full"
-            />
+          <iframe
+          className="w-full max-w-4xl mx-auto aspect-video"
+          src={`https://www.youtube.com/embed/${currentTrailer.videoUrl.split("v=")[1]}?autoplay=1`}
+          title="YouTube video"
+          allowFullScreen
+          />
      </div>
      <div className='group grid grid-cols-4 gap-4 md:gap-8 mt-8 max-w-3xl mx-auto'>
       {dummyTrailers.map((trailer)=>(
